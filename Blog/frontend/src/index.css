@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+}
+
+.inputs {
+  @apply w-[90%] border-2 focus:outline-none py-3 px-2 text-lg border-black rounded-lg mb-4 focus:shadow-lg
+}
+
+.submit {
+  @apply bg-green-700 text-white px-5 py-2 font-semibold rounded-md text-lg hover:bg-green-800 transition-colors shadow-sm;
+}
+
+.defaultButton {
+  @apply p-4 text-2xl flex justify-center items-center rounded-full shadow-lg bg-white;
+}
+
+.hoveredButton {
+  @apply p-4 text-2xl flex items-center rounded-full shadow-lg w-[128px] h-[56px] overflow-hidden
+}
+
+.grow {
+  animation-name: grow;
+  animation-duration: .25s;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: .55s;
+}
+
+@keyframes grow {
+  0% {width: 56px;}
+  100% {width: 128px;}
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.error {
+  @apply bg-red-100 text-red-600 border-red-600 border-2 font-semibold p-2 mt-4 rounded-lg
+}
+
+.fixedIcon {
+  @apply fixed bottom-4 left-4
+}
+
+.createInputs {
+  @apply w-[90%] border-2 focus:outline-none py-3 px-2 text-lg border-black rounded-lg mb-4 focus:shadow-lg
+}
+
+textarea {
+  resize: vertical;
+  height: 320px;
+  resize: none;
+}
