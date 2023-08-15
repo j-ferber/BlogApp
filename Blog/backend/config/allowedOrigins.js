@@ -1,6 +1,6 @@
 const allowedOrigins = [
   "http://localhost:5173",
-  "jotterblog.vercel.app"
+  "https://jotterblog.vercel.app"
 ]
 
 module.exports = allowedOrigins
