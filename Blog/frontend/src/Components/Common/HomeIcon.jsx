@@ -8,7 +8,7 @@ const Icons = () => {
 
   return (
     <Link to='/'>
-      <button className={hover === 1 ? 'hoveredButton grow fixedIcon bg-white' : 'defaultButton fixedIcon bg-white'} onMouseOver={() => setHover(1)} onMouseOut={() => setHover(0)}>
+      <button className={hover === 1 ? 'hoveredButton grow fixedIcon bg-white dark:bg-zinc-900 dark:text-white' : 'defaultButton fixedIcon bg-white dark:bg-zinc-900 dark:text-white'} onMouseOver={() => setHover(1)} onMouseOut={() => setHover(0)}>
         {hover === 1 ? 
           <div className='w-full flex items-center relative'>
             <AiOutlineHome className='w-6'/>

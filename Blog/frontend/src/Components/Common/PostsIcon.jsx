@@ -8,7 +8,7 @@ const Icons = () => {
 
   return (
     <Link to='/posts'>
-      <button className={hover === 1 ? 'hoveredButton grow bg-white' : 'defaultButton'} onMouseOver={() => setHover(1)} onMouseOut={() => setHover(0)}>
+      <button className={hover === 1 ? 'hoveredButton grow bg-white dark:bg-zinc-900 dark:text-white' : 'defaultButton dark:bg-zinc-900 dark:text-white'} onMouseOver={() => setHover(1)} onMouseOut={() => setHover(0)}>
         {hover === 1 ? 
           <div className='w-full flex items-center relative'>
             <CiViewList className='w-6'/>

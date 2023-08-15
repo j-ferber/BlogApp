@@ -5,6 +5,7 @@ import { usePostsContext } from '../../Hooks/usePostsContext'
 import PostDetails from './PostDetails'
 import PostsIcon from '../Common/PostsIcon'
 import LogoutIcon from '../Common/LogoutIcon'
+import ThemeSwitch from '../Common/ThemeSwitch'
 
 const Home = () => {
 
@@ -40,6 +41,7 @@ const Home = () => {
       <div className='fixed flex flex-col bottom-4 left-4 h-32 justify-between'>
         <LogoutIcon />
         <PostsIcon />
+        <ThemeSwitch />
       </div>
     </>
   )

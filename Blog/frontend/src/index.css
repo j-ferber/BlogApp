@@ -14,7 +14,7 @@
 }
 
 .inputs {
-  @apply w-[90%] border-2 focus:outline-none py-3 px-2 text-lg border-black rounded-lg mb-4 focus:shadow-lg
+  @apply w-[90%] border-2 focus:outline-none py-3 px-2 text-lg border-black rounded-lg mb-4 focus:shadow-lg dark:bg-zinc-800
 }
 
 .submit {
@@ -59,6 +59,10 @@
 
 .fixedIcon {
   @apply fixed bottom-4 left-4
+}
+
+.fixedRight {
+  @apply fixed bottom-4 right-4
 }
 
 .createInputs {

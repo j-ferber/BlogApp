@@ -16,7 +16,7 @@ const Icons = () => {
 
   return (
     <Link to='/login'>
-      <button className={hover === 2 ? 'hoveredButton grow bg-red-500 text-white transition-all' : 'defaultButton'} onMouseOver={() => setHover(2)} onMouseOut={() => setHover(0)} onClick={user ? handleLogout : null} >
+      <button className={hover === 2 ? 'hoveredButton grow bg-red-500 text-white transition-all' : 'defaultButton dark:bg-zinc-900 dark:text-white'} onMouseOver={() => setHover(2)} onMouseOut={() => setHover(0)} onClick={user ? handleLogout : null} >
         {hover === 2 ? 
           <div className='w-full flex items-center relative'>
             <BiLogOut className='w-6'/>

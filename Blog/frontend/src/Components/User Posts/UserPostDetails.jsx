@@ -31,14 +31,14 @@ const UserPostDetails = ({ post }) => {
   }
 
   return (
-    <div className="w-3/4 bg-white h-max flex justify-center mb-6 flex-col p-6 shadow-lg rounded-lg">
+    <div className="w-3/4 bg-white h-max flex justify-center mb-6 flex-col p-6 shadow-lg rounded-lg dark:bg-zinc-900 dark:text-white">
       <h2 className='text-2xl font-semibold capitalize mb-3'>{post.title}</h2>
       <p className='text-center mb-[14px] p-3 text-lg'>{post.text}</p>
       <div className="flex justify-between">
         <p>{post.createdAt.slice(0, 10)}</p>
         <div className='flex items-center justify-center'>
-          <button className='text-2xl hover:bg-gray-300 hover:rounded-full p-2 transition-all' onClick={handleEdit}><BiEdit/></button>
-          <button className='text-xl hover:bg-gray-300 hover:rounded-full p-2 transition-all' onClick={handleDelete}><FaTrashAlt/></button>
+          <button className='text-2xl hover:bg-gray-300 hover:rounded-full p-2 transition-all dark:hover:bg-zinc-700' onClick={handleEdit}><BiEdit/></button>
+          <button className='text-xl hover:bg-gray-300 hover:rounded-full p-2 transition-all dark:hover:bg-zinc-700' onClick={handleDelete}><FaTrashAlt/></button>
         </div>
       </div>
     </div>
