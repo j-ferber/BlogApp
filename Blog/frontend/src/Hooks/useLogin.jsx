@@ -18,7 +18,6 @@ export const useLogin = () => {
       setError(response.data.error)
       setLoading(false)
     } else if (response.status === 200) {
-      console.log(response.data)
       localStorage.setItem('user', JSON.stringify(response.data))
       dispatch({ type: 'LOGIN', payload: response.data })
       setLoading(false)

@@ -23,7 +23,6 @@ const NewPost = () => {
     if (response.status === 400) {
       setError(response.data.error)
     } else if (response.status === 401) {
-      console.log(response)
       setPostsError(response.data.error)
       localStorage.removeItem('user')
       dispatch({ type: 'LOGOUT', payload: null })

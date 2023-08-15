@@ -21,8 +21,6 @@
       if (user) dispatch({type: 'LOGIN', payload: user})
     }, [])
     
-    console.log(state)
-
     return (
       <UserContext.Provider value={{...state, dispatch}}>
         {children}
