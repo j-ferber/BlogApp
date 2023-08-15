@@ -4,6 +4,7 @@ import { useUserContext } from '../../Hooks/useAuthContext'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { usePostsContext } from '../../Hooks/usePostsContext'
+import ThemeSwitch from '../Common/ThemeSwitch'
 
 const NewPost = () => {
 
@@ -46,6 +47,7 @@ const NewPost = () => {
             </div>
           }
         </form>
+        <ThemeSwitch />
       </div>
     </>
   )

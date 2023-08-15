@@ -7,6 +7,7 @@ import { usePostsContext } from '../../Hooks/usePostsContext'
 import UserPostDetails from './UserPostDetails'
 import HomeIcon from '../Common/HomeIcon'
 import LogoutIcon from '../Common/LogoutIcon'
+import ThemeSwitch from '../Common/ThemeSwitch'
 
 const UserPosts = () => {
 
@@ -62,6 +63,7 @@ const UserPosts = () => {
         <LogoutIcon />
         <HomeIcon />
       </div>
+      <ThemeSwitch />
     </>
   )
 }

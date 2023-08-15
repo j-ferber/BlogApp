@@ -5,6 +5,7 @@ import axios from 'axios'
 import { useUserContext } from '../../Hooks/useAuthContext'
 import { useNavigate } from 'react-router-dom'
 import { usePostsContext } from '../../Hooks/usePostsContext'
+import ThemeSwitch from '../Common/ThemeSwitch'
 
 const EditPost = () => {
 
@@ -64,6 +65,7 @@ const EditPost = () => {
           <div className="error">{fetchError}</div>
         }
       </form>
+      <ThemeSwitch />
     </>
   )
 }

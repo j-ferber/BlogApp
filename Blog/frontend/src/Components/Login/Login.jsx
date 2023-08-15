@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import HomeIcon from '../Common/HomeIcon'
 import { useLogin } from '../../Hooks/useLogin'
 import { usePostsContext } from '../../Hooks/usePostsContext'
+import ThemeSwitch from '../Common/ThemeSwitch'
 
 const Login = () => {
 
@@ -30,6 +31,7 @@ const Login = () => {
         }
       </form>
       <HomeIcon />
+      <ThemeSwitch />
     </>
   )
 }

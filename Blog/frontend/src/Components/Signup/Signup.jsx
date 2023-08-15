@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import HomeIcon from '../Common/HomeIcon'
 import { useSignup } from '../../Hooks/useSignup'
+import ThemeSwitch from '../Common/ThemeSwitch'
 
 const Signup = () => {
 
@@ -28,6 +29,7 @@ const Signup = () => {
         }
       </form>
       <HomeIcon />
+      <ThemeSwitch />
     </>
   )
 }
