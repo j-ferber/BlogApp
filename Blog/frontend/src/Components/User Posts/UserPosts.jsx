@@ -19,7 +19,7 @@ const UserPosts = () => {
   useEffect(() => {
     const getPosts = async () => {
       setLoading(true)
-      const response = await axios.get('http://localhost:4000/blogs/user', { validateStatus: () => true, headers: {Authorization: `Bearer ${user.accessToken}` } })
+      const response = await axios.get('https://jotterbackend.onrender.com/blogs/user', { validateStatus: () => true, headers: {Authorization: `Bearer ${user.accessToken}` } })
       if (response.status === 401) {
         setError(response.data.error)
         localStorage.removeItem('user')

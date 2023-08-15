@@ -20,7 +20,7 @@ const EditPost = () => {
   const handleSubmit = async (e) => {
     setFetchError(null)
     e.preventDefault()
-    const response = await axios.patch(`http://localhost:4000/blogs/${id}`, { title, text }, { validateStatus: () => true, headers: { Authorization: `Bearer ${user.accessToken}` } })
+    const response = await axios.patch(`https://jotterbackend.onrender.com/blogs/${id}`, { title, text }, { validateStatus: () => true, headers: { Authorization: `Bearer ${user.accessToken}` } })
     if (response.status === 401) {
       setError(response.data.error)
       localStorage.removeItem('user')
@@ -36,7 +36,7 @@ const EditPost = () => {
   useEffect(() => {
     const getEditPost = async () => {
       setFetchError(null)
-      const response = await axios.get(`http://localhost:4000/blogs/${id}`, { validateStatus: () => true, headers: { Authorization: `Bearer ${user.accessToken}` } })
+      const response = await axios.get(`https://jotterbackend.onrender.com/blogs/${id}`, { validateStatus: () => true, headers: { Authorization: `Bearer ${user.accessToken}` } })
       if (response.status === 200) {
         setTitle(response.data.post.title)
         setText(response.data.post.text)

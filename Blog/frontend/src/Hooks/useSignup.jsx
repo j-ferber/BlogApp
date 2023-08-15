@@ -10,7 +10,7 @@ export const useSignup = () => {
   const signup = async (username, password) => {
     setError(null)
     setLoading(true)
-    const response = await axios.post('http://localhost:4000/user/signup', { username, password }, { validateStatus: () => true })
+    const response = await axios.post('https://jotterbackend.onrender.com/user/signup', { username, password }, { validateStatus: () => true })
     if (response.status === 400) {
       setError(response.data.error)
       setLoading(false)

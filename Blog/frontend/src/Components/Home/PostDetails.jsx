@@ -14,7 +14,7 @@ const PostDetails = ({ post }) => {
   const { dispatch } = useUserContext()
   
   const handleLike = async () => {
-    const response = await axios.post(`http://localhost:4000/blogs/${post._id}`, { username: user.username }, { validateStatus: () => true, headers: { Authorization: `Bearer ${user.accessToken}` } })
+    const response = await axios.post(`https://jotterbackend.onrender.com/blogs/${post._id}`, { username: user.username }, { validateStatus: () => true, headers: { Authorization: `Bearer ${user.accessToken}` } })
     console.log(response)
     if (response.status === 200) {
       setLikes(response.data.likes)

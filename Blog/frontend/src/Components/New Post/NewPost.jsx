@@ -19,7 +19,7 @@ const NewPost = () => {
     setError(null)
     setPostsError(null)
     const username = user.username
-    const response = await axios.post('http://localhost:4000/blogs', { title, text, username }, { validateStatus: () => true, headers: { Authorization: `Bearer ${user.accessToken}` } })
+    const response = await axios.post('https://jotterbackend.onrender.com/blogs', { title, text, username }, { validateStatus: () => true, headers: { Authorization: `Bearer ${user.accessToken}` } })
     if (response.status === 400) {
       setError(response.data.error)
     } else if (response.status === 401) {

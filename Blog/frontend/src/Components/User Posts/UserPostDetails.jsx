@@ -19,7 +19,7 @@ const UserPostDetails = ({ post }) => {
   }
 
   const handleDelete = async () => {
-    const response = await axios.delete(`http://localhost:4000/blogs/${post._id}`, { validateStatus: () => true, headers: { Authorization: `Bearer ${user.accessToken}` } })
+    const response = await axios.delete(`https://jotterbackend.onrender.com/blogs/${post._id}`, { validateStatus: () => true, headers: { Authorization: `Bearer ${user.accessToken}` } })
     if (response.status === 200) {
       dispatch({type: 'DELETE_POST', payload: response.data.post})
     } else if (response.status === 401) {

@@ -15,7 +15,7 @@ const Home = () => {
   useEffect(() => {
     const getPosts = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/blogs', {validateStatus: () => true})
+        const response = await axios.get('https://jotterbackend.onrender.com/blogs', {validateStatus: () => true})
         if (response.status === 200) {
           dispatch({ type: 'SET_POSTS', payload: response.data })
         }
