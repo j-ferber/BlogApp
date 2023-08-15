@@ -16,14 +16,16 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={!user ? <Login /> : <Navigate to='/' />} />
-        <Route path='/signup' element={!user ? <Signup /> : <Navigate to='/' />} />
-        <Route path='/posts' element={user ? <UserPosts /> : <Navigate to='/login' />} />
-        <Route path='/newpost' element={user ? <NewPost /> : <Navigate to='/' />} />
-        <Route path='/editpost/:id' element={user ? <EditPost /> : <Navigate to='/login' />} />
-      </Routes>
+      <div className='bg-gray-300 flex-1 flex mt-20 flex-col items-center pt-5'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={!user ? <Login /> : <Navigate to='/' />} />
+          <Route path='/signup' element={!user ? <Signup /> : <Navigate to='/' />} />
+          <Route path='/posts' element={user ? <UserPosts /> : <Navigate to='/login' />} />
+          <Route path='/newpost' element={user ? <NewPost /> : <Navigate to='/' />} />
+          <Route path='/editpost/:id' element={user ? <EditPost /> : <Navigate to='/login' />} />
+        </Routes>
+      </div>
     </div>
   )
 }

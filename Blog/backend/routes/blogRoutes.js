@@ -18,5 +18,6 @@ router.route('/:id')
   .get(blogController.getSinglePost)
   .patch(blogController.updatePost)
   .delete(blogController.deletePost)
+  .post(blogController.likePost)
 
 module.exports = router

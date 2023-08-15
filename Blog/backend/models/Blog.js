@@ -12,6 +12,9 @@ const blogSchema = new mongoose.Schema(
     username: {
       type: String,
       required: true
+    },
+    likes: {
+      type: [String]
     }
   }, {timestamps: true}
 )

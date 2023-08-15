@@ -41,7 +41,7 @@ const UserPosts = () => {
   }, [])
 
   return (
-    <div className='bg-gray-300 flex-1 flex mt-20 flex-col items-center pt-5'>
+    <>
       {posts?.length > 0 && posts.map(post => (
           <UserPostDetails key={post._id} post={post}/>
         ))
@@ -62,7 +62,7 @@ const UserPosts = () => {
         <LogoutIcon />
         <HomeIcon />
       </div>
-    </div>
+    </>
   )
 }
 

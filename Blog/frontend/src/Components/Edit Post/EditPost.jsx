@@ -54,8 +54,8 @@ const EditPost = () => {
   }, [])
 
   return (
-    <div className="flex-1 bg-gray-300 flex w-screen mt-20 justify-center">
-      <form className='h-max rounded-xl w-3/4 mt-20 shadow-lg bg-white flex flex-col items-center p-5'>
+    <>
+      <form className='h-max rounded-xl w-3/4 mt-12 shadow-lg bg-white flex flex-col items-center p-5'>
         <h2 className='text-4xl font-semibold mb-6 mt-1'>Edit Post</h2>
         <input type="text" className="inputs" value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Enter title'/>
         <textarea type="text" className="inputs" value={text} onChange={(e) => setText(e.target.value)} placeholder='Enter text'/>
@@ -64,7 +64,7 @@ const EditPost = () => {
           <div className="error">{fetchError}</div>
         }
       </form>
-    </div>
+    </>
   )
 }
 

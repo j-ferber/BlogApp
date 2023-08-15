@@ -14,7 +14,7 @@ const Signup = () => {
   }
 
   return (
-    <div className='flex-1 mt-20 justify-center flex bg-gray-300'>
+    <>
       <form className="h-max rounded-xl w-2/5 mt-28 shadow-lg bg-white flex flex-col items-center p-5" onSubmit={handleSubmit}>
         <p className='text-4xl font-semibold mb-6'>Signup</p>
         <input type="text" placeholder='Enter username' className='inputs' value={username} onChange={(e) => setUsername(e.target.value)}/>
@@ -28,7 +28,7 @@ const Signup = () => {
         }
       </form>
       <HomeIcon />
-    </div>
+    </>
   )
 }
 

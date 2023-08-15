@@ -10,7 +10,9 @@ const UserPostDetails = ({ post }) => {
 
   const navigate = useNavigate()
   const { user } = useUserContext()
-  const {dispatch} = usePostsContext()
+  const { dispatch } = usePostsContext()
+  const { setError } = usePostsContext()
+  const { dispatch: userDispatch } = useUserContext()
   
   const handleEdit = () => {
     navigate(`/editpost/${post._id}`)
@@ -20,6 +22,11 @@ const UserPostDetails = ({ post }) => {
     const response = await axios.delete(`http://localhost:4000/blogs/${post._id}`, { validateStatus: () => true, headers: { Authorization: `Bearer ${user.accessToken}` } })
     if (response.status === 200) {
       dispatch({type: 'DELETE_POST', payload: response.data.post})
+    } else if (response.status === 401) {
+      setError(response.data.error)
+      localStorage.removeItem('user')
+      userDispatch({type: 'LOGOUT', payload: null})
+      navigate('/login')
     }
   }
 

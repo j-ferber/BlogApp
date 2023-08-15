@@ -1,7 +1,7 @@
 const Blog = require('../models/Blog')
 
 const getAllPosts = async (req, res) => {
-  const posts = await Blog.find().sort({ updatedAt: -1 })
+  const posts = await Blog.find().sort({ createdAt: -1 })
   if (posts?.length) return res.status(200).json(posts)
   return res.status(400).json({error: 'No posts found.'})
 }
@@ -40,9 +40,28 @@ const updatePost = async (req, res) => {
 }
 
 const getUserPosts = async (req, res) => {
-  const posts = await Blog.find({ username: req.user.username }).sort({ updatedAt: -1 })
+  const posts = await Blog.find({ username: req.user.username }).sort({ createdAt: -1 })
   if (!posts?.length > 0) return res.status(400).json({ error: 'No posts found.' })
   return res.status(200).json({posts})
 }
 
-module.exports = {getAllPosts, createNewPost, getSinglePost, deletePost, updatePost, getUserPosts}
+const likePost = async (req, res) => {
+  const {id} = req.params
+  const username = req.body.username
+  console.log(username)
+  const post = await Blog.find({ _id: id })
+  if (!id) return res.status(400).json({ error: 'ID is required' })
+  if (!post?.length) return res.status(400).json({ error: 'No post found with that ID' })
+  const likes = post[0].likes
+  if (likes.includes(username)) {
+    const index = likes.indexOf(username)
+    likes.splice(index, 1)
+    await Blog.findOneAndUpdate({ _id: id }, { likes })
+  } else {
+    likes.push(username)
+    await Blog.findOneAndUpdate({_id: id}, {likes})
+  }
+  return res.status(200).json({likes})
+}
+
+module.exports = {getAllPosts, createNewPost, getSinglePost, deletePost, updatePost, getUserPosts, likePost}

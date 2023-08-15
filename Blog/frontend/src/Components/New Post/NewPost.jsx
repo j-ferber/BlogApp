@@ -34,8 +34,8 @@ const NewPost = () => {
   }
 
   return (
-    <div className="flex-1 w-screen bg-gray-300 mt-20 justify-center flex">
-      <div className="h-max rounded-xl w-3/4 mt-20 shadow-lg bg-white flex flex-col items-center p-5">
+    <>
+      <div className="h-max rounded-xl w-3/4 mt-12 shadow-lg bg-white flex flex-col items-center p-5">
         <form className='w-full h-full flex flex-col items-center'>
           <p className='font-semibold text-3xl mb-4'>Create New Post</p>
           <input type="text" className="inputs" placeholder='Enter post title' value={title} onChange={(e) => setTitle(e.target.value)}/>
@@ -48,7 +48,7 @@ const NewPost = () => {
           }
         </form>
       </div>
-    </div>
+    </>
   )
 }
 

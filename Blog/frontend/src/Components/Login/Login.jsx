@@ -16,7 +16,7 @@ const Login = () => {
   }
 
   return (
-    <div className='flex-1 mt-20 justify-center flex bg-gray-300'>
+    <>
       <form className="h-max rounded-xl w-2/5 mt-28 shadow-lg bg-white flex flex-col items-center p-5" onSubmit={handleSubmit}>
         <p className='text-4xl font-semibold mb-6'>Login</p>
         <input type="text" placeholder='Enter username' className='inputs' onChange={(e) => setUsername(e.target.value)} value={username}/>
@@ -30,7 +30,7 @@ const Login = () => {
         }
       </form>
       <HomeIcon />
-    </div>
+    </>
   )
 }
 

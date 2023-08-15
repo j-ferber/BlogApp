@@ -15,7 +15,9 @@ const Home = () => {
     const getPosts = async () => {
       try {
         const response = await axios.get('http://localhost:4000/blogs', {validateStatus: () => true})
-        if (response.status === 200) dispatch({ type: 'SET_POSTS', payload: response.data })
+        if (response.status === 200) {
+          dispatch({ type: 'SET_POSTS', payload: response.data })
+        }
         if (response.status === 400) setError(response.data.error)
       } catch (err) {
         console.log(err)
@@ -25,7 +27,7 @@ const Home = () => {
   }, [])
 
   return (
-    <div className="mt-20 flex-1 bg-gray-300 items-center flex flex-col pt-6">
+    <>
       {posts?.length > 0 && !error && posts.map(post => (
         <PostDetails key={post._id} post={post} />
         ))
@@ -39,7 +41,7 @@ const Home = () => {
         <LogoutIcon />
         <PostsIcon />
       </div>
-    </div>
+    </>
   )
 }
 
