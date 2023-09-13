@@ -26,23 +26,23 @@ const PostDetails = ({ post }) => {
   }
 
   return (
-    <div className='w-3/4 bg-white h-max flex justify-center mb-6 flex-col p-6 shadow-lg rounded-lg dark:bg-zinc-900 dark:text-white'>
-      <h2 className='text-2xl font-semibold capitalize mb-3'>{post.title}</h2>
-      <p className='text-center mb-[14px] p-3 text-lg'>{post.text}</p>
+    <div className='max-lg:w-3/5 max-xl:w-2/3 w-3/4 bg-white h-max flex justify-center mb-6 flex-col p-6 shadow-lg rounded-lg dark:bg-zinc-900 dark:text-white relative'>
+      <h2 className='text-2xl font-semibold capitalize mb-3 max-md:text-xl'>{post.title}</h2>
+      <p className='text-center mb-[14px] p-3 text-lg max-md:text-base'>{post.text}</p>
       <div className='flex justify-end items-center mt-1'>
         {user ?
           <>
-            <button className='text-xl mt-[2px] hover:bg-gray-300 hover:rounded-full p-1 transition-all mr-[2px]' onClick={handleLike}>
+            <button className='text-xl max-md:text-base mt-[2px] hover:bg-gray-300 hover:rounded-full p-1 transition-all mr-[2px]' onClick={handleLike}>
               {!likes ? post.likes?.includes(user.username) ? <AiFillHeart className='text-red-500' /> : <AiOutlineHeart /> : likes?.includes(user.username) ? <AiFillHeart className='text-red-600' /> : <AiOutlineHeart />}
             </button>
-            <p>{!likes ? post.likes.length : likes?.length}</p>
+            <p className='max-md:text-sm'>{!likes ? post.likes.length : likes?.length}</p>
           </>
           : 
-          <p className='flex'>Sign in to {<AiOutlineHeart className='mt-[6px] ml-1' />}</p>
+          <p className='flex max-md:text-sm'>Sign in to {<AiOutlineHeart className='mt-[6px] ml-1' />}</p>
         } 
         
       </div>
-      <div className='flex justify-between items-center'>
+      <div className='flex justify-between items-center max-md:text-sm'>
         <p>{post.createdAt.slice(0, 10)}</p>
         <p>By: {post.username}</p>
       </div>
