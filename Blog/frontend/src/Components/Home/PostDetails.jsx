@@ -26,7 +26,7 @@ const PostDetails = ({ post }) => {
   }
 
   return (
-    <div className='max-lg:w-3/5 max-xl:w-2/3 w-3/4 bg-white h-max flex justify-center mb-6 flex-col p-6 shadow-lg rounded-lg dark:bg-zinc-900 dark:text-white relative'>
+    <div className='max-lg:w-3/5 max-xl:w-2/3 w-3/4 bg-white h-max flex justify-center mb-6 flex-col p-6 shadow-lg rounded-lg dark:bg-zinc-900 dark:text-white'>
       <h2 className='text-2xl font-semibold capitalize mb-3 max-md:text-xl'>{post.title}</h2>
       <p className='text-center mb-[14px] p-3 text-lg max-md:text-base'>{post.text}</p>
       <div className='flex justify-end items-center mt-1'>
