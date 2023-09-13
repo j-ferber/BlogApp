@@ -32,7 +32,7 @@ const PostDetails = ({ post }) => {
       <div className='flex justify-end items-center mt-1'>
         {user ?
           <>
-            <button className='text-xl max-md:text-base mt-[2px] hover:bg-gray-300 hover:rounded-full p-1 transition-all mr-[2px]' onClick={handleLike}>
+            <button className='text-xl max-md:text-base mt-[2px] hover:bg-zinc-700 hover:rounded-full p-1 transition-all mr-[2px]' onClick={handleLike}>
               {!likes ? post.likes?.includes(user.username) ? <AiFillHeart className='text-red-500' /> : <AiOutlineHeart /> : likes?.includes(user.username) ? <AiFillHeart className='text-red-600' /> : <AiOutlineHeart />}
             </button>
             <p className='max-md:text-sm'>{!likes ? post.likes.length : likes?.length}</p>
