@@ -22,4 +22,4 @@ To run the application:
 
 ```$ npm run dev```
 
-Go to http://localhost:3000/ to view front end
+Go to http://localhost:5173/ to view front end
